@@ -22,7 +22,7 @@ services:
   sqlite3:
     container_name: sqlite3
     image: keinos/sqlite3
-    command: tail -F anything
+    command: "tail -F anything"
     environment:
       - MYSQL_ROOT_PASSWORD=databoss
   postgres:
