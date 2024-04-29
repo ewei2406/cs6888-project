@@ -1,0 +1,32 @@
+version: "3.1"
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    ports:
+      - 8083:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=databoss
+  mssql:
+    container_name: mssql
+    platform: linux/amd64
+    cap_add:
+      - SYS_PTRACE
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: D@taB0ss
+  sqlite3:
+    container_name: sqlite3
+    image: keinos/sqlite3
+    command: tail -F anything
+    environment:
+      - MYSQL_ROOT_PASSWORD=databoss
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=D@taB0ss
