@@ -5,3 +5,5 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (id, username, email) VALUES (123, 'joe bob', 'joe@example.com');
+
+SELECT * FROM users;

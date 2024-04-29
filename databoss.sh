@@ -1,7 +1,5 @@
 # Start databases
-docker-compose up --build -d
-
-sleep 5
+# docker-compose up --build -d
 
 # Send mysql command
 docker exec -i mysql mysql -u root -pdataboss mysql < state.sql
@@ -16,4 +14,4 @@ docker exec -it sqlite3 sqlite3 tmp/databoss.db "$(<state.sql)" ".exit"
 docker exec -it postgres psql -U postgres -c "$(<state.sql)"
 
 # Stop databases
-docker-compose down
+# docker-compose down
